@@ -40,8 +40,7 @@ class App extends React.Component {
       });
   }
   render() {
-    console.log("pintando app"+ this.state.paises.length);
-    let saludo="hola que tal";
+    //console.log("pintando app"+ this.state.paises.length);
     let paises=this.state.paises;
     let banderas=paises.map((p,i)=>{
       return (<Bandera pais={p} key={i} padre={this} incrementar={()=>{this.handleClick()}} contador={this.state.contador}/>);
@@ -49,7 +48,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <input className='buscador' placeholder='Filtrar pais'></input>
+          <input className='buscador' placeholder='Filtrar paises'></input>
           <div className="banderas">{banderas}</div>
           <a
             className="App-link"
