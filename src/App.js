@@ -12,7 +12,8 @@ class App extends React.Component {
     this.state={
       contador:0,
       nombre:'Inicio',
-      datos:[]
+      paises:[]
+
     }
 
   }
@@ -22,15 +23,36 @@ class App extends React.Component {
     conta++;
     this.setState({contador:conta})
   }
+  componentDidMount(){
+    let that=this;
+    fetch('https://restcountries.com/v3.1/all')
+    .then(function (response) {
+        return response.json();
+      })
+      .then(function(datos){
+        let datosPaises=datos.map((valor,indice)=>{
+          return {
+            nombre:valor.name.common,
+            bandera:valor.flags.png
+          }  
+        });
+        that.setState({paises: datosPaises})
+      });
+  }
   render() {
+    console.log("pintando app"+ this.state.paises.length);
     let saludo="hola que tal";
+    let paises=this.state.paises;
+    let banderas=paises.map((p,i)=>{
+      return (<Bandera pais={p} key={i} padre={this} incrementar={()=>{this.handleClick()}} contador={this.state.contador}/>);
+    })
     return (
       <div className="App">
         <header className="App-header">
           <p onClick={this.props.saludar} >
            {saludo} 
           </p>
-          <Bandera incrementar={()=>{this.handleClick()}} pais='España' contador={this.state.contador}/>
+          <div className="banderas">{banderas}</div>
           <a
             className="App-link"
             href="https://reactjs.org"
