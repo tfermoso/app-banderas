@@ -1,1 +1,30 @@
-.Bandera {}
+.Bandera {
+    width: 200px;
+    border: 1px solid white;
+}
+.Bandera img{
+    width: 100%;
+    height: 100px;
+}
+.Bandera .contador{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.Bandera .contador p{
+    margin: 0;
+}
+.Bandera .contador button{
+    width: 80%;
+}
+.banderas{
+    display: flex;
+    flex-wrap: wrap;
+}
+.nombre{
+    height: 40px;
+}
+.buscador{
+    height: 40px;
+    font-size: 35px;
+}

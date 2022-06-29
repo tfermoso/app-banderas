@@ -49,9 +49,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p onClick={this.props.saludar} >
-           {saludo} 
-          </p>
+          <input className='buscador' placeholder='Filtrar pais'></input>
           <div className="banderas">{banderas}</div>
           <a
             className="App-link"
