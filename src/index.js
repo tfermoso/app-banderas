@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+let datos=[1,23,4,5];
+function saludar(){
+  console.log("Saludo desde el archivo");
+}
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App saludar={()=>{saludar()}} />
   </React.StrictMode>
 );
 
