@@ -15,7 +15,7 @@ class Bandera extends React.Component {
     //console.log(this.props.padre)
     let contadorPadre = this.props.padre.state.contador;
     contadorPadre++;
-    this.props.padre.setState({ contador: contadorPadre });
+    //this.props.padre.setState({ contador: contadorPadre });
     let conta = ++this.state.contador;
     this.setState({ contador: conta })
   }
